@@ -11,6 +11,8 @@
     }
   };
 
+  console.log("favourite thing");
+
   ModelObject = (function() {
     function ModelObject() {}
 
