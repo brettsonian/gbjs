@@ -1,7 +1,7 @@
 VAT = 1.14
 Array::remove = (e) -> @.splice(t, 1) if (t = @indexOf(e)) > -1
 console.log "favourite thing"
-class ModelObject
+class window.ModelObject
 
     #base class to play with django backend apish hack
     #expects json result sporting a status (int) and data (payload)
@@ -14,13 +14,13 @@ class ModelObject
 
     getByID: (id) ->
         @_busy = true
-        $.get '/api/get_by_id/', params: model: @model, id: id
-        .success (data, status, headers, config) =>
-            @_busy = false
-            if data.status == 0
-                @constructor(data.data)
-            else
-                @constructor({})
+        $.get('/api/get_by_id/', {model: @model, id: id})
+#        .then (data) =>
+#            @_busy = false
+#            if data.status == 0
+#                return @constructor(data.data)
+#            else
+#                return @constructor({})
 
 # 	@getAll: ({includes, excludes, limit, filter, order_by, distinct} = {}) ->
 # 		gbdajaxice Dajaxice.gascoweb.gcw.get_model_all,
