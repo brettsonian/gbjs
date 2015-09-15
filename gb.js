@@ -23,15 +23,15 @@
         params: {
           model: this.model,
           id: id
-        }
-      }.success(function(data, status, headers, config) {
-        _this._busy = false;
-        if (data.status === 0) {
-          return _this.constructor(data.data);
-        } else {
-          return _this.constructor({});
-        }
-      }));
+        }.success(function(data, status, headers, config) {
+          _this._busy = false;
+          if (data.status === 0) {
+            return _this.constructor(data.data);
+          } else {
+            return _this.constructor({});
+          }
+        })
+      });
     };
 
     return ModelObject;
