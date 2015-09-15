@@ -20,10 +20,8 @@
       var _this = this;
       this._busy = true;
       return $.get('/api/get_by_id/', {
-        params: {
-          model: this.model,
-          id: id
-        }
+        model: this.model,
+        id: id
       }).then(function(data, status, headers, config) {
         _this._busy = false;
         if (data.status === 0) {
