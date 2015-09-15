@@ -17,18 +17,10 @@
     function ModelObject() {}
 
     ModelObject.prototype.getByID = function(id) {
-      var _this = this;
       this._busy = true;
       return $.get('/api/get_by_id/', {
         model: this.model,
         id: id
-      }).then(function(data) {
-        _this._busy = false;
-        if (data.status === 0) {
-          return _this.constructor(data.data);
-        } else {
-          return _this.constructor({});
-        }
       });
     };
 
