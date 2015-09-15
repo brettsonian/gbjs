@@ -1,6 +1,6 @@
 VAT = 1.14
 Array::remove = (e) -> @.splice(t, 1) if (t = @indexOf(e)) > -1
-
+console.log "favourite thing"
 class ModelObject
 
     #base class to play with django backend apish hack
