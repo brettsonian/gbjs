@@ -22,7 +22,7 @@
       return $.get('/api/get_by_id/', {
         model: this.model,
         id: id
-      }).then(function(data, status, headers, config) {
+      }).then(function(data) {
         _this._busy = false;
         if (data.status === 0) {
           return _this.constructor(data.data);
